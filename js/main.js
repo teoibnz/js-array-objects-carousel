@@ -41,24 +41,32 @@ const next = document.querySelector('.my-next');
 const prev = document.querySelector('.my-previous');
 
 const imageWrapper = document.querySelector('.my-carousel-images');
+const thumbWrapper = document.querySelector('.my-thumbnails')
 
 for ( let i = 0; i < guitarImage.length; i++){
-    let imageElement = [createImgContainer()];
+    // inserisco dinamicamente le img nel carosello in display none
+    let imageElement = createImgContainer();
     imageWrapper.appendChild(imageElement)
     imageElement.innerHTML = `
     <img src="img/${guitarImage[i]['url']}" alt="">
     `;
-}
+    imageElement.classList.add('my-img-container','active')
+    // inserisco dinamicamentele img della sezione thumbnails
+    let thumbImageElement = createImgContainer();
+    thumbWrapper.appendChild(thumbImageElement);
+    thumbImageElement.innerHTML = `
+    <img src="img/${guitarImage[i]['url']}" alt="">
+    `
+    thumbImageElement.classList.add('my-thumb-container')
 
+
+}
     next.addEventListener('click', function(){
-        
     })
 
 
 
-
-function createImgContainer (){
+function createImgContainer(){
     let newImgContainer = document.createElement('div');
-    newImgContainer.classList.add('img-container');
     return newImgContainer;
 }
