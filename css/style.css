@@ -52,3 +52,14 @@ div.my-next > span::after{
     content: "\f520";
     line-height: 30px;
 }
+
+
+div.img-container{
+    display: none;
+}
+
+div.img-container img{
+    object-fit: fill;
+    width: 1100px;
+    height: 700px;
+}

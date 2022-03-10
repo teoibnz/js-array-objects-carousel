@@ -24,15 +24,41 @@ const guitarImage = [
     },
     {
         nome : 'Second Guitar',
-        url : 'fender-img-1.jpeg',
+        url : 'fender-img-2.jpeg',
     },
     {
         nome : 'Third Guitar',
-        url : 'fender-img-1.jpeg',
+        url : 'fender-img-3.jpeg',
     },
     {
         nome : 'Fourth Guitar',
-        url : 'fender-img-1.jpeg',
+        url : 'fender-img-strato.jpeg',
     },
     
 ]
+
+const next = document.querySelector('.my-next');
+const prev = document.querySelector('.my-previous');
+
+const imageWrapper = document.querySelector('.my-carousel-images');
+
+for ( let i = 0; i < guitarImage.length; i++){
+    let imageElement = [createImgContainer()];
+    imageWrapper.appendChild(imageElement)
+    imageElement.innerHTML = `
+    <img src="img/${guitarImage[i]['url']}" alt="">
+    `;
+}
+
+    next.addEventListener('click', function(){
+        
+    })
+
+
+
+
+function createImgContainer (){
+    let newImgContainer = document.createElement('div');
+    newImgContainer.classList.add('img-container');
+    return newImgContainer;
+}
