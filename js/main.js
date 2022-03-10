@@ -90,3 +90,16 @@ next.addEventListener('click', function(){
     thumbImageElement[activeElement].classList.add('clicked')
 
 })
+
+setInterval (function (){
+    mainImageElement[activeElement].classList.remove('active')
+    thumbImageElement[activeElement].classList.remove('clicked')
+
+    activeElement++
+
+    if (activeElement > mainImageElement.length - 1){
+        activeElement = 0;
+    }
+    mainImageElement[activeElement].classList.add('active')
+    thumbImageElement[activeElement].classList.add('clicked')
+}, 1500)
